@@ -72,5 +72,10 @@ export default {
       query: "/pulls?q=author%3Ajosephsawaya+",
     };
   },
+  head() {
+    return {
+      title: "Joey Sawaya",
+    };
+  },
 };
 </script>
