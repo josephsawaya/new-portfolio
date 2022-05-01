@@ -37,6 +37,7 @@ a:hover {
         Welcome to my new website. I thought my old one wasn't that great,
         <br />but if you're interested in seeing the old source code you can
         find it <a href="https://github.com/josephsawaya/portfolio">here</a>.
+        <br />
         For this one I took some inspiration from
         <a href="https://sourcehut.org">sourcehut</a>.
       </p>
