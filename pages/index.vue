@@ -36,12 +36,13 @@ a:hover {
       <p>
         Welcome to my new website. I thought my old one wasn't that great,
         <br />but if you're interested in seeing the old source code you can
-        find it
-        <a href="https://github.com/josephsawaya/portfolio">here</a>
+        find it <a href="https://github.com/josephsawaya/portfolio">here</a>.
+        For this one I took some inspiration from
+        <a href="https://sourcehut.org">sourcehut</a>.
       </p>
       <p>
         You can find my current work
-        <a href="https://github.com/josephsawaya?tab=repositories">here</a>
+        <a href="https://github.com/josephsawaya?tab=repositories">here</a>.
       </p>
       <p>
         I've been working as an intern at Red Hat since May 2021, and worked on
