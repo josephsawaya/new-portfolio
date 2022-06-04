@@ -11,8 +11,13 @@ html {
 }
 
 #contained {
-  width: 95%;
+  width: 80%;
   margin: auto;
+}
+
+#cardContainer {
+  display: flex;
+  height: 20%;
 }
 
 #name {
@@ -32,31 +37,32 @@ a:hover {
 <template>
   <div id="container">
     <div id="contained">
-      <p id="name">Joey Sawaya</p>
+      <p id="name">Joseph Sawaya</p>
       <p>
-        Welcome to my new website. I thought my old one wasn't that great,
-        <br />but if you're interested in seeing the old source code you can
-        find it <a href="https://github.com/josephsawaya/portfolio">here</a>.
-        <br />
-        For this one I took some inspiration from
-        <a href="https://sourcehut.org">sourcehut</a>.
+        Welcome to my website.<br/><br/>
+        I'm a soon to be fourth year Computer Engineering student at the University of Toronto.<br/><br/>
+        Since May 2021, I have been doing a 16-month internship at Red Hat as an open source software developer intern.<br/>
       </p>
       <p>
-        You can find my current work
-        <a href="https://github.com/josephsawaya?tab=repositories">here</a>.
-      </p>
-      <p>
-        I've been working as an intern at Red Hat since May 2021, and worked on
-        various projects:
+        These are the various projects I have contributed to for my internship:
       </p>
       <ul>
         <li v-for="(project, index) in projects" :key="index">
           <a v-bind:href="project['url']">{{ project["name"] }}</a>
-          and what
-          <a v-bind:href="project['url'] + query"> I worked on</a>
+          and
+          <a v-bind:href="project['url'] + query"> my contribution</a>
         </li>
       </ul>
-      <p>Other than that I don't have much going on for now.</p>
+      <p>
+        I also do open-source development for fun outside of work here are some other projects I have worked on:
+      </p>
+      <div id="cardContainer">
+        <card v-for="(project, index) in ownprojects" :key="index" :name="project['name']" :url="project['url']" :para="project['para']"/>
+      </div>
+      <p>
+        My biggest interests related to software include cloud-native development and distributed systems, but in general I like anything software related.<br/><br/>
+        Outside of work, I enjoy playing soccer, trying out new food, and reading books, specifically those about productivity and self-improvement.<br/>
+      </p>
     </div>
   </div>
 </template>
@@ -68,14 +74,21 @@ export default {
       projects: [
         { name: "Ceph", url: "https://github.com/ceph/ceph" },
         { name: "Rook", url: "https://github.com/rook/rook" },
-        { name: "Harpoon", url: "https://github.com/redhat-et/harpoon" },
+        { name: "FetchIt", url: "https://github.com/containers/fetchit" },
       ],
       query: "/pulls?q=author%3Ajosephsawaya+",
+      ownprojects: [
+        { 
+          name: "Discord soundboard bot",
+          url: "https://github.com/josephsawaya/better-disc-sound-bot",
+          para: "A Discord bot that lets user upload sounds and play them on command. Made in python using discord.py."
+        },
+      ],
     };
   },
   head() {
     return {
-      title: "Joey Sawaya",
+      title: "Joseph Sawaya",
     };
   },
 };
